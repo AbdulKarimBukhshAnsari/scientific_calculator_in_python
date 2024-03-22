@@ -1,6 +1,7 @@
 from tkinter import *
-from PIL import ImageTk,Image
 import math as m
+
+
 def close():
     root.destroy()
 def clr():
@@ -22,6 +23,8 @@ def div(a,b):
 def expression_break(sign,expression):
     values=expression.split(sign,1)
     return values
+
+
 
 def scientific(expression):
 
@@ -45,6 +48,9 @@ def scientific(expression):
     elif sci[0]=="fac":
         result=m.factorial(int(sci[1]))
     return result
+
+
+
 def equal():
     expression=ent.get()
     clr()
@@ -77,6 +83,8 @@ def equal():
         ent.insert(0,result)
     except Exception as e:
         ent.insert(0,e)
+
+
 
 
 
@@ -160,3 +168,4 @@ b_equal.grid(row=9,column=0,columnspan=3,sticky=E+W,ipady=5)
 b_close=Button(root,text="close",bg="gray5",fg="darkorange",font=font,borderwidth=1,relief="solid",command=close)
 b_close.grid(row=9,column=3,sticky=E+W,ipady=5)
 
+root.mainloop()
